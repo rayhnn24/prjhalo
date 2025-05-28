@@ -3,20 +3,24 @@
 using namespace std;
 
 int main() {
-    string name [5];
+    int jumlah;
+    cout << "Masukkan jumlah nama: ";
+    cin >> jumlah;
 
-    name[0] = "Alice";
-    name[1] = "Bob";
-    name[2] = "Charlie";
-    name[3] = "Diana";
-    name[4] = "Eve";
+    string* nama = new string[jumlah];
 
-    cout << "Daftar Nama:\n";
-    for (int i = 0; i < 5; i++) {
-        cout << name[i] << endl;
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Masukkan nama ke-" << i + 1 << ": ";
+        cin >> nama[i];
     }
 
+    cout << "\nDaftar Nama:\n";
+    for (int i = 0; i < jumlah; i++) {
+        cout << nama[i] << endl;
+    }
 
+    delete[] nama;
+   
     system("pause");
     return 0;
 }
